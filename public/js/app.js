@@ -13,7 +13,7 @@ weatherForm.addEventListener('submit', (e) => {
 
   axios({
     method: 'get',
-    url: `http://localhost:3000/weather?address=${searchElement.value}`,
+    url: `/weather?address=${searchElement.value}`,
     responseType: 'json',
   })
     .then((res) => {
