@@ -58,12 +58,18 @@ app.get('/weather', (req, res) => {
   getForecast(address, (error, data, locationName) => {
     //console.log(data);
     if (typeof error === 'undefined') {
-      const { temperature, feelslike, weather_descriptions } = data.current;
+      const {
+        temperature,
+        feelslike,
+        weather_descriptions,
+        humidity,
+      } = data.current;
       return res.send({
         address: address,
         Location: locationName,
         Temperature: temperature,
         FeelsLike: feelslike,
+        humidity: humidity,
         forecast: weather_descriptions,
       });
     } else {

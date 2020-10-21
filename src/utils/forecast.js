@@ -18,6 +18,7 @@ const getForecast = (location, callback) => {
         .then((response) => {
           if (typeof response.data.location !== 'undefined') {
             callback(undefined, response.data, locationName);
+            //console.log(response.data);
           } else {
             callback(
               `${response.data.error.type}. ${response.data.error.info}`,
